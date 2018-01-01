@@ -72,6 +72,11 @@ public class CalendarUtils {
 		calendarLastDay.add(Calendar.DATE, -1);
 		return new String[] { df.format(calendarFirstDay.getTime()), df.format(calendarLastDay.getTime()) };
 	}
+	
+	public static String today() {
+		SimpleDateFormat dfs = new SimpleDateFormat("yyyyMMdd");
+		return dfs.format(new Date());
+	}
 
 	public static void main(String[] args) {
 		System.out.println(getNext60Day("20161120"));

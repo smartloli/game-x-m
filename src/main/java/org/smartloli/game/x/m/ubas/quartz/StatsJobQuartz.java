@@ -121,7 +121,7 @@ public class StatsJobQuartz implements Job {
 			}
 
 			// 申请Redis连接对象
-			Jedis jedis = JedisUtils.getJedisInstance("game.x.m.ubas.stats");
+			Jedis jedis = JedisUtils.getJedisInstance("game.x.m");
 
 			String key = task.getTheme() + "_" + task.getFrequency() + "_v2_" + task.getDate();
 			String field = task.getName() + "_" + task.getType();

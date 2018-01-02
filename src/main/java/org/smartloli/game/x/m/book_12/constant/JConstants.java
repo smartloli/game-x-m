@@ -31,5 +31,6 @@ public class JConstants {
 		public static final String PV = "pv";
 		public static final String UID = "uid";
 		public static final String OTHER = "other";
+		public static final String CLUSTER = "cluster";
 	}
 }

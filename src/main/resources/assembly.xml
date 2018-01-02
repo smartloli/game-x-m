@@ -15,7 +15,7 @@
 	</dependencySets>
 	<fileSets>
 		<fileSet>
-			<directory>src/main/resources</directory>
+			<directory>src/main/resources/bash</directory>
 			<outputDirectory>/bin</outputDirectory>
 			<includes>
 				<include>*.sh</include>
@@ -25,8 +25,7 @@
 			<directory>src/main/resources</directory>
 			<outputDirectory>/conf</outputDirectory>
 			<includes>
-				<include>system-config.properties</include>
-				<include>*.xml</include>
+				<include>*.properties</include>
 			</includes>
 		</fileSet>
 		<fileSet>

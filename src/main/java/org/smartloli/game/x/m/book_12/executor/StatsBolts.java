@@ -42,13 +42,13 @@ import redis.clients.jedis.Jedis;
  *
  *         Created by Jan 1, 2018
  */
-public class StatsBlots implements IRichBolt {
+public class StatsBolts implements IRichBolt {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Logger LOG = LoggerFactory.getLogger(StatsBlots.class);
+	private Logger LOG = LoggerFactory.getLogger(StatsBolts.class);
 
 	private OutputCollector collector;
 	private Map<String, Integer> counter;

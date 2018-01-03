@@ -52,25 +52,14 @@ public class KafkaTopology {
 		config.setDebug(true);
 		if (JConstants.StormParam.CLUSTER.equals(SystemConfig.getProperty("game.x.m.storm.mode"))) {
 			LOG.info("Cluster Mode Submit.");
-			// config.put(Config.NIMBUS_SEEDS,
-			// SystemConfig.getPropertyArray("game.x.m.storm.nimbus", ","));
-			// config.setMaxSpoutPending(5000);
-			// try {
-			// StormSubmitter.submitTopologyWithProgressBar(KafkaTopology.class.getSimpleName()
-			// + "_" + new Date().getTime(), config, builder.createTopology());
-			// } catch (Exception e) {
-			// e.printStackTrace();
-			// }
 
 			String path = SystemConfig.getProperty("game.x.m.storm.jar.path");
 			config.put(Config.NIMBUS_SEEDS, Arrays.asList("dn1")); //
-			config.put(Config.NIMBUS_THRIFT_PORT, 6627);// 配置nimbus连接端口，默认 6627
-			config.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("dn1", "dn2", "dn3")); // 配置zookeeper连接主机地址，可以使用集合存放多个
-			config.put(Config.STORM_ZOOKEEPER_PORT, 2181); // 配置zookeeper连接端口，默认2181
+			config.put(Config.NIMBUS_THRIFT_PORT, 6627);
+			config.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("dn1", "dn2", "dn3")); 
+			config.put(Config.STORM_ZOOKEEPER_PORT, 2181);
 			config.setNumWorkers(2);
 
-			// 非常关键的一步，使用StormSubmitter提交拓扑时，不管怎么样，都是需要将所需的jar提交到nimbus上去，如果不指定jar文件路径，
-			// storm默认会使用System.getProperty("storm.jar")去取，如果不设定，就不能提交
 			System.setProperty("storm.jar", path);
 
 			try {

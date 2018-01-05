@@ -44,13 +44,14 @@ import redis.clients.jedis.Jedis;
  */
 public class StatsBolts implements IRichBolt {
 
-	/**
-	 * 
-	 */
+	/** 序列化ID. */
 	private static final long serialVersionUID = 1L;
+	/** 创建一个日志对象. */
 	private Logger LOG = LoggerFactory.getLogger(StatsBolts.class);
 
+	/** 输出收集器. */
 	private OutputCollector collector;
+	/** 计数器. */
 	private Map<String, Integer> counter;
 
 	@Override
@@ -58,6 +59,7 @@ public class StatsBolts implements IRichBolt {
 
 	}
 
+	/** 统计指标. */
 	@Override
 	public void execute(Tuple input) {
 		String key = input.getString(0);

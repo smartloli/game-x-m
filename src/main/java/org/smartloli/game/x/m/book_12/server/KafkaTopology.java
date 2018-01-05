@@ -43,6 +43,7 @@ import org.smartloli.game.x.m.ubas.util.SystemConfig;
 public class KafkaTopology {
 	private static Logger LOG = LoggerFactory.getLogger(KafkaTopology.class);
 
+	/** 采用Storm Thrift接口进行提交任务. */
 	public static void main(String[] args) {
 		TopologyBuilder builder = new TopologyBuilder();
 		builder.setSpout("spout", new KafkaSpout());
@@ -56,7 +57,7 @@ public class KafkaTopology {
 			String path = SystemConfig.getProperty("game.x.m.storm.jar.path");
 			config.put(Config.NIMBUS_SEEDS, Arrays.asList("dn1")); //
 			config.put(Config.NIMBUS_THRIFT_PORT, 6627);
-			config.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("dn1", "dn2", "dn3")); 
+			config.put(Config.STORM_ZOOKEEPER_SERVERS, Arrays.asList("dn1", "dn2", "dn3"));
 			config.put(Config.STORM_ZOOKEEPER_PORT, 2181);
 			config.setNumWorkers(2);
 

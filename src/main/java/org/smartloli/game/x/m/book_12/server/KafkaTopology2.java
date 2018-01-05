@@ -42,6 +42,7 @@ import org.smartloli.game.x.m.ubas.util.SystemConfig;
 public class KafkaTopology2 {
 	private static Logger LOG = LoggerFactory.getLogger(KafkaTopology2.class);
 
+	/** Storm集群通过Storm命令进行提交任务. */
 	public static void main(String[] args) {
 		TopologyBuilder builder = new TopologyBuilder();
 		builder.setSpout("spout", new KafkaSpout());

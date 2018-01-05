@@ -42,14 +42,15 @@ import org.smartloli.game.x.m.ubas.util.SystemConfig;
  */
 public class KafkaSpout implements IRichSpout {
 
-	/**
-	 * 
-	 */
+	/** 序列化ID. */
 	private static final long serialVersionUID = 1L;
+	/** 创建一个日志对象. */
 	private Logger LOG = LoggerFactory.getLogger(KafkaSpout.class);
 
+	/** Spout输出收集器. */
 	private SpoutOutputCollector collector;
 
+	/** 创建Kafka实例对象. */
 	private KafkaConsumer<String, String> createKafkaConfig() {
 		Properties props = new Properties();
 		props.put("bootstrap.servers", SystemConfig.getProperty("game.x.m.kafka.brokers"));// "slave01:9095,slave01:9094"
@@ -61,6 +62,7 @@ public class KafkaSpout implements IRichSpout {
 		return new KafkaConsumer<>(props);
 	}
 
+	/** 消费Kafka集群中Topic业务数据. */
 	@Override
 	public void activate() {
 		KafkaConsumer<String, String> consumer = createKafkaConfig();

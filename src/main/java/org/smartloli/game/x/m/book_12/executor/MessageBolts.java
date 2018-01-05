@@ -41,11 +41,10 @@ import com.alibaba.fastjson.JSONObject;
  */
 public class MessageBolts implements IRichBolt {
 
-	/**
-	 * 
-	 */
+	/** 序列化ID. */
 	private static final long serialVersionUID = 1L;
 
+	/** 输出收集器. */
 	private OutputCollector collector;
 
 	@Override
@@ -53,6 +52,7 @@ public class MessageBolts implements IRichBolt {
 
 	}
 
+	/** 预处理数据. */
 	@Override
 	public void execute(Tuple input) {
 		JSONObject json = JSON.parseObject(input.getString(0));

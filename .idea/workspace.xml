@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efc557ee-7d07-46ee-9da4-2457844298e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/smartloli/game/x/m/ubas/quartz/StatsJobQuartz.java" afterPath="$PROJECT_DIR$/src/main/java/org/smartloli/game/x/m/ubas/quartz/StatsJobQuartz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/smartloli/game/x/m/ubas/util/CalendarUtils.java" afterPath="$PROJECT_DIR$/src/main/java/org/smartloli/game/x/m/ubas/util/CalendarUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/system-config.properties" afterPath="$PROJECT_DIR$/src/main/resources/system-config.properties" />
-    </list>
+    <list default="true" id="efc557ee-7d07-46ee-9da4-2457844298e0" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,24 +10,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1114">
-              <caret line="131" column="10" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+            <state relative-caret-position="344">
+              <caret line="115" column="8" lean-forward="true" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
               <folding>
-                <marker date="1514825149000" expanded="true" signature="2642:2658" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="2673:2822" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="2837:2960" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="2986:3424" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="2998:3414" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3010:3401" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3081:3204" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3100:3183" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3221:3388" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3238:3370" ph="..." />
-                <marker date="1514825149000" expanded="true" signature="3310:3352" ph="..." />
+                <marker date="1514910372000" expanded="true" signature="2642:2658" ph="..." />
               </folding>
             </state>
           </provider>
@@ -82,9 +67,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -203,14 +188,16 @@
       <workItem from="1514816202720" duration="58000" />
       <workItem from="1514816298210" duration="87000" />
       <workItem from="1514824873809" duration="285000" />
+      <workItem from="1515053947468" duration="85000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442000" />
+    <option name="totallyTimeSpent" value="527000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -274,20 +261,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1114">
-          <caret line="131" column="10" lean-forward="true" selection-start-line="131" selection-start-column="10" selection-end-line="131" selection-end-column="10" />
+        <state relative-caret-position="344">
+          <caret line="115" column="8" lean-forward="true" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
           <folding>
-            <marker date="1514825149000" expanded="true" signature="2642:2658" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="2673:2822" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="2837:2960" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="2986:3424" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="2998:3414" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3010:3401" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3081:3204" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3100:3183" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3221:3388" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3238:3370" ph="..." />
-            <marker date="1514825149000" expanded="true" signature="3310:3352" ph="..." />
+            <marker date="1514910372000" expanded="true" signature="2642:2658" ph="..." />
           </folding>
         </state>
       </provider>

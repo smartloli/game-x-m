@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+ <!-- RM（Resource Manager）失联后重新链接的时间 -->
+  <property>
+    <name>yarn.resourcemanager.connect.retry-interval.ms</name>
+    <value>2000</value>
+  </property>
+  <!-- 开启Resource Manager HA,默认为false -->
+  <property>
+    <name>yarn.resourcemanager.ha.enabled</name>
+    <value>true</value>
+  </property>
+  <!-- 配置Resource Manager -->
+  <property>
+    <name>yarn.resourcemanager.ha.rm-ids</name>
+    <value>rm1,rm2</value>
+  </property>
+  <property>
+    <name>ha.zookeeper.quorum</name>
+    <value>dn1:2181,dn2:2181,dn3:2181</value>
+  </property>
+  <!-- 开启故障自动切换 -->
+  <property>
+    <name>yarn.resourcemanager.ha.automatic-failover.enabled</name>
+    <value>true</value>
+  </property>
+  <!-- rm1配置开始 -->
+  <!-- 配置Resource Manager主机别名rm1角色为NameNode Active-->
+  <property>
+    <name>yarn.resourcemanager.hostname.rm1</name>
+    <value>nna</value>
+  </property>
+  <!-- 配置Resource Manager主机别名rm1角色为NameNode Standby-->
+  <property>
+    <name>yarn.resourcemanager.hostname.rm2</name>
+    <value>nns</value>
+  </property>
+  <!-- 在nna上配置rm1,在nns上配置rm2,将配置好的文件远程复制到其它机器上，但在yarn的另一个机器上一定要修改-->
+  <property>
+    <name>yarn.resourcemanager.ha.id</name>
+    <value>rm1</value>
+  </property>
+  <!-- 开启自动恢复功能 -->
+  <property>
+    <name>yarn.resourcemanager.recovery.enabled</name>
+    <value>true</value>
+  </property>
+  <!-- 配置与zookeeper的连接地址 -->
+  <property>
+    <name>yarn.resourcemanager.zk-state-store.address</name>
+    <value>dn1:2181,dn2:2181,dn3:2181</value>
+  </property>
+  <!--用于持久化RM（Resource Manager简称）状态存储，基于Zookeeper实现 -->
+  <property>
+    <name>yarn.resourcemanager.store.class</name>
+    <value>org.apache.hadoop.yarn.server.resourcemanager.recovery.ZKRMStateStore</value>
+  </property>
+  <!-- Zookeeper地址用于RM（Resource Manager）实现状态存储，以及HA的设置-->
+  <property>
+    <name>yarn.resourcemanager.zk-address</name>
+    <value>dn1:2181,dn2:2181,dn3:2181</value>
+  </property>
+  <!-- 集群ID标识 -->
+  <property>
+    <name>yarn.resourcemanager.cluster-id</name>
+    <value>cluster1-yarn</value>
+  </property>
+  <!-- schelduler失联等待连接时间 -->
+  <property>
+    <name>yarn.app.mapreduce.am.scheduler.connection.wait.interval-ms</name>
+    <value>5000</value>
+  </property>
+  <!-- 配置rm1，其应用访问管理接口 -->
+  <property>
+    <name>yarn.resourcemanager.address.rm1</name>
+    <value>nna:8132</value>
+  </property>
+  <!-- 调度接口地址 -->
+  <property>
+    <name>yarn.resourcemanager.scheduler.address.rm1</name>
+    <value>nna:8130</value>
+  </property>
+  <!-- RM的Web访问地址 -->
+  <property>
+    <name>yarn.resourcemanager.webapp.address.rm1</name>
+    <value>nna:8188</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address.rm1</name>
+    <value>nna:8131</value>
+  </property>
+  <!-- RM管理员接口地址 -->
+  <property>
+    <name>yarn.resourcemanager.admin.address.rm1</name>
+    <value>nna:8033</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.admin.address.rm1</name>
+    <value>nna:23142</value>
+  </property>
+  <!-- rm1配置结束 -->
+  <!-- rm2配置开始 -->
+  <!-- 配置rm2，与rm1配置一致，只是将nna节点名称换成nns节点名称 -->
+  <property>
+    <name>yarn.resourcemanager.address.rm2</name>
+    <value>nns:8132</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.address.rm2</name>
+    <value>nns:8130</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address.rm2</name>
+    <value>nns:8188</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address.rm2</name>
+    <value>nns:8131</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.admin.address.rm2</name>
+    <value>nns:8033</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.ha.admin.address.rm2</name>
+    <value>nns:23142</value>
+  </property>
+  <!-- rm2配置结束 -->
+  <!-- NM（NodeManager得简称）的附属服务，需要设置成mapreduce_shuffle才能运行MapReduce任务 -->
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <!-- 配置shuffle处理类 -->
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+  <!-- NM(NodeManager得简称)本地文件路径 -->
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>/data/soft/new/yarn/local</value>
+  </property>
+  <!-- NM（NodeManager得简称）日志存放路径 -->
+  <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>/data/soft/new/log/yarn</value>
+  </property>
+  <!-- ShuffleHandler运行服务端口，用于Map结果输出到请求Reducer  -->
+  <property>
+    <name>mapreduce.shuffle.port</name>
+    <value>23080</value>
+  </property>
+  <!-- 故障处理类 -->
+  <property>
+    <name>yarn.client.failover-proxy-provider</name>
+    <value>org.apache.hadoop.yarn.client.ConfiguredRMFailoverProxyProvider</value>
+  </property>
+  <!-- 故障自动转移的zookeeper路径地址 -->
+  <property>
+    <name>yarn.resourcemanager.ha.automatic-failover.zk-base-path</name>
+    <value>/yarn-leader-election</value>
+  </property>
+  <property>
+    <name>mapreduce.jobtracker.address</name>
+    <value>http://nna:9001</value>
+  </property>
+ <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+ </property>
+ <property>
+     <name>yarn.nodemanager.remote-app-log-dir</name>
+     <value>/tmp/logs</value>
+ </property>
+ <property>
+     <name>yarn.nodemanager.remote-app-log-dir-suffix</name>
+     <value>logs</value>     
+  </property>
+ <property>
+    <name>yarn.log-aggregation.retain-seconds</name>
+    <value>259200</value>
+ </property>
+ <property>
+    <name>yarn.log-aggregation.retain-check-interval-seconds</name>
+    <value>3600</value>
+ </property>
+<property>
+    <name>yarn.web-proxy.address</name>
+    <value>nna:8090</value>
+</property> 
+<!-- 配置Fair调度策略  -->
+ <property>
+     <description>
+       CLASSPATH for YARN applications. A comma-separated list
+       of CLASSPATH entries. When this value is empty, the following default
+       CLASSPATH for YARN applications would be used. 
+       For Linux:
+       HADOOP_CONF_DIR,
+       $HADOOP_COMMON_HOME/share/hadoop/common/*,
+       $HADOOP_COMMON_HOME/share/hadoop/common/lib/*,
+       $HADOOP_HDFS_HOME/share/hadoop/hdfs/*,
+       $HADOOP_HDFS_HOME/share/hadoop/hdfs/lib/*,
+       $HADOOP_YARN_HOME/share/hadoop/yarn/*,
+       $HADOOP_YARN_HOME/share/hadoop/yarn/lib/*
+    </description>                                                                  <name>yarn.application.classpath</name>
+    <value>/data/soft/new/hadoop/etc/hadoop,/data/soft/new/hadoop/share/hadoop/common/*,/data/soft/new/hadoop/share/hadoop/common/lib/*,/data/soft/new/hadoop/share/hadoop/hdfs/*,/data/soft/new/hadoop/share/hadoop/hdfs/lib/*,/data/soft/new/hadoop/share/hadoop/yarn/*,/data/soft/new/hadoop/share/hadoop/yarn/lib/*</value>  </property>
+
+<property>
+     <name>yarn.resourcemanager.scheduler.class</name>
+     <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.fair.FairScheduler</value>
+</property>
+<property>
+    <name>yarn.resourcemanager.system-metrics-publisher.enabled</name>
+    <value>true</value>
+</property>
+<property>
+    <name>yarn.scheduler.fair.allocation.file</name>
+    <value>/data/soft/new/hadoop/etc/hadoop/fair-scheduler.xml</value>
+</property>
+<property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>1024</value>
+</property>
+<property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>1</value>
+</property>
+<property>
+　　<name>yarn.nodemanager.vmem-pmem-ratio</name>
+　　<value>4.2</value>
+</property>
+</configuration>

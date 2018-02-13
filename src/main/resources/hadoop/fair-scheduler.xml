@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<allocations>
+	<queue name="root">
+		<aclSubmitApps>hadoop</aclSubmitApps>
+		<aclAdministerApps>hadoop</aclAdministerApps>
+		
+		<queue name="default">
+			<maxRunningApps>10</maxRunningApps>
+			<minResources>1024mb,1vcores</minResources>
+			<maxResources>2048mb,2vcores</maxResources>
+			<schedulingPolicy>fair</schedulingPolicy>
+			<weight>1.0</weight>
+			<aclSubmitApps>hadoop</aclSubmitApps>
+			<aclAdministerApps>hadoop</aclAdministerApps>
+		</queue>
+		
+		<queue name="hadoop">
+			<maxRunningApps>10</maxRunningApps>
+			<minResources>1024mb,1vcores</minResources>
+			<maxResources>3072mb,3vcores</maxResources>
+			<schedulingPolicy>fair</schedulingPolicy>
+			<weight>1.0</weight>
+			<aclSubmitApps>hadoop</aclSubmitApps>
+			<aclAdministerApps>hadoop</aclAdministerApps>
+		</queue>
+		
+		<queue name="queue_1024_01">
+			<maxRunningApps>10</maxRunningApps>
+			<minResources>1000mb,1vcores</minResources>
+			<maxResources>2048mb,2vcores</maxResources>
+			<schedulingPolicy>fair</schedulingPolicy>
+			<weight>1.0</weight>
+			<aclSubmitApps>hadoop,hduser1024</aclSubmitApps>
+			<aclAdministerApps>hadoop,hduser1024</aclAdministerApps>
+		</queue>
+	</queue>
+	
+	<fairSharePreemptionTimeout>600000</fairSharePreemptionTimeout>
+	<defaultMinSharePreemptionTimeout>600000</defaultMinSharePreemptionTimeout>
+</allocations>

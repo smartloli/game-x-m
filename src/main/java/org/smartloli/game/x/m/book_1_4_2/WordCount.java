@@ -125,7 +125,7 @@ public class WordCount {
 		try {
 			if (args.length < 1) {
 				LOG.info("args length is 0");
-				run("hello.txt");
+				run("test");
 			} else {
 				run(args[0]);
 			}

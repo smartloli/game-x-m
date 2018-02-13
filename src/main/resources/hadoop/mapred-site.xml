@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!--
+       	     	计算任务托管的资源框架名称
+       	     		     		-->
+  <property>
+      <name>mapreduce.framework.name</name>
+          <value>yarn</value>
+            </property>
+              <!-- 
+                   							     	配置 MapReduce JobHistory Server 地址，默认端口10020 
+                   							     								     		-->
+  <property>
+      <name>mapreduce.jobhistory.address</name>
+          <value>0.0.0.0:10020</value>
+            </property>
+              <!-- 
+                   							     	配置 MapReduce JobHistory Server Web 地址，默认端口19888 
+                   							     								     		-->
+  <property>
+      <name>mapreduce.jobhistory.webapp.address</name>
+          <value>nna:19888</value>
+            </property>
+<property>
+    <name>yarn.app.mapreduce.am.resource.mb</name>
+        <value>512</value>
+        </property>
+<property>
+　　<name>mapreduce.map.memory.mb</name>
+　　<value>512</value>
+</property>
+<property>
+　　<name>mapreduce.map.java.opts</name>
+　　<value>-Xmx512M</value>
+</property>
+<property>
+　　<name>mapreduce.reduce.memory.mb</name>
+　　<value>512</value>
+</property>
+<property>
+　　<name>mapreduce.reduce.java.opts</name>
+　　<value>-Xmx512M</value>
+</property>
+<property>
+　　<name>mapred.child.java.opts</name>
+　　<value>-Xmx512M</value>
+</property>            
+</configuration>

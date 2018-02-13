@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<!-- 指定HDFS的NameService为cluster1，需要和core-site.xml中的保持一致 -->
+	<property>
+		<name>dfs.nameservices</name>
+		<value>cluster1</value>
+	</property>
+	<!-- cluster1下面有两个NameNode，分别是nna节点，nns节点 -->
+	<property>
+		<name>dfs.ha.namenodes.cluster1</name>
+		<value>nna,nns</value>
+	</property>
+	<!-- nna节点的RPC通信地址 -->
+	<property>
+		<name>dfs.namenode.rpc-address.cluster1.nna</name>
+		<value>nna:9000</value>
+	</property>
+	<!-- nns节点的RPC通信地址 -->
+	<property>
+		<name>dfs.namenode.rpc-address.cluster1.nns</name>
+		<value>nns:9000</value>
+	</property>
+	<!-- nna节点的http通信地址 -->
+	<property>
+		<name>dfs.namenode.http-address.cluster1.nna</name>
+		<value>nna:50070</value>
+	</property>
+	<!-- nns节点的http通信地址 -->
+	<property>
+		<name>dfs.namenode.http-address.cluster1.nns</name>
+		<value>nns:50070</value>
+	</property>
+	<!-- 指定NameNode的元数据在JournalNode上的存放位置 -->
+	<property>
+		<name>dfs.namenode.shared.edits.dir</name>
+		<value>
+			qjournal://dn1:8485;dn2:8485;dn3:8485/cluster1
+		</value>
+	</property>
+	<!-- 配置失败自动切换实现方式 -->
+	<property>
+		<name>dfs.client.failover.proxy.provider.cluster1</name>
+		<value>
+			org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider
+		</value>
+	</property>
+	<!-- 配置隔离机制 -->
+	<property>
+		<name>dfs.ha.fencing.methods</name>
+		<value>sshfence</value>
+	</property>
+	<!-- 使用隔离机制时需要ssh免密码登陆 -->
+	<property>
+		<name>dfs.ha.fencing.ssh.private-key-files</name>
+		<value>/home/hadoop/.ssh/id_rsa</value>
+	</property>
+	<!-- 指定NameNode的元数据在JournalNode上的存放位置 -->
+	<property>
+		<name>dfs.journalnode.edits.dir</name>
+		<value>/data/soft/new/tmp/journal</value>
+	</property>
+	<!--指定支持高可用自动切换机制 -->
+	<property>
+		<name>dfs.ha.automatic-failover.enabled</name>
+		<value>true</value>
+	</property>
+	<!--指定NameNode名称空间的存储地址 -->
+	<property>
+		<name>dfs.namenode.name.dir</name>
+		<value>/data/soft/new/dfs/name</value>
+	</property>
+	<!--指定DataNode数据存储地址 -->
+	<property>
+		<name>dfs.datanode.data.dir</name>
+		<value>/data/soft/new/dfs/data</value>
+	</property>
+	<!-- 指定数据冗余份数 -->
+	<property>
+		<name>dfs.replication</name>
+		<value>3</value>
+	</property>
+	<!-- 指定可以通过Web访问HDFS目录 -->
+	<property>
+		<name>dfs.webhdfs.enabled</name>
+		<value>true</value>
+	</property>
+	<!-- 保证数据恢复，通过0.0.0.0来保证既可以内网地址访问，也可以外网地址访问 -->
+	<property>
+		<name>dfs.journalnode.http-address</name>
+		<value>0.0.0.0:8480</value>
+	</property>
+	<property>
+		<name>dfs.journalnode.rpc-address</name>
+		<value>0.0.0.0:8485</value>
+	</property>
+	<!-- 通过ZKFailoverController来实现自动故障切换 -->
+	<property>
+		<name>ha.zookeeper.quorum</name>
+		<value>dn1:2181,dn2:2181,dn3:2181</value>
+	</property>
+</configuration>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <!-- 
+       	     	指定分布式文件存储系统（HDFS）的NameService为cluster1,是NameNode的URI 
+       	     		     		-->
+  <property>
+      <name>fs.defaultFS</name>
+          <value>hdfs://cluster1</value>
+            </property>
+              <!--
+                   							     	用于序列文件缓冲区的大小。这个缓冲区的大小可能是硬件页面大小的倍数，它决定了在读写操作期间缓冲了多少数据
+                   							     								     		-->
+  <property>
+      <name>io.file.buffer.size</name>
+          <value>131072</value>
+            </property>
+              <!-- 指定hadoop临时目录 -->
+  <property>
+      <name>hadoop.tmp.dir</name>
+          <value>/data/soft/new/tmp</value>
+            </property>
+              <!--指定可以在任何IP访问 -->
+  <property>
+      <name>hadoop.proxyuser.hadoop.hosts</name>
+          <value>*</value>
+            </property>
+              <!--指定所有用户可以访问 -->
+  <property>
+      <name>hadoop.proxyuser.hadoop.groups</name>
+          <value>*</value>
+            </property>
+              <!-- 指定ZooKeeper地址 -->
+  <property>
+      <name>ha.zookeeper.quorum</name>
+          <value>dn1:2181,dn2:2181,dn3:2181</value>
+            </property>
+            </configuration>

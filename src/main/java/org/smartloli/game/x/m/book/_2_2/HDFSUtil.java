@@ -44,9 +44,9 @@ public class HDFSUtil {
 		// cluster1下面有两个NameNode，分别是nna节点和nns节点
 		conf.set("dfs.ha.namenodes.cluster1", "nna,nns");
 		// nna节点下的RPC通信地址
-		conf.set("dfs.namenode.rpc-address.cluster1.nna", "10.211.55.26:9000");
+		conf.set("dfs.namenode.rpc-address.cluster1.nna", "nna:9000");
 		// nns节点下的RPC通信地址
-		conf.set("dfs.namenode.rpc-address.cluster1.nns", "10.211.55.27:9000");
+		conf.set("dfs.namenode.rpc-address.cluster1.nns", "nns:9000");
 		// 实现故障自动转移方式
 		conf.set("dfs.client.failover.proxy.provider.cluster1", "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider");
 	}
@@ -63,7 +63,7 @@ public class HDFSUtil {
 	}
 
 	public static void main(String[] args) throws IOException {
-		ls("/home/hdfs/test/ins/");
+		ls("/");
 	}
 
 }

@@ -53,8 +53,8 @@ public class HiveJdbcUtils {
 	// 初始化连接地址
 	public HiveJdbcUtils() {
 		try {
-			// String[] urls = new String[] { "jdbc:hive2://nna:10001/default",
-			// "jdbc:hive2://nns:10001/default" };
+			// String[] urls = new String[] { "jdbc:hive2://nna:12001/default",
+			// "jdbc:hive2://nns:12001/default" };
 			String[] urls = SystemConfig.getPropertyArray("game.x.m.ubas.hive.jdbc", ",");
 			for (String url : urls) {
 				String connect = url;

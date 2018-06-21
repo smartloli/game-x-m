@@ -25,7 +25,7 @@
 本书的所有示例都封装在该项目中，读者可以下载该工程的源代码来对照书中的内容进行学习。由于本工程采用的是Maven来进行管理，所以在需要编译打包时，可以直接只用```mvn```命令，或者执行```./build.sh```脚本来实现打包。
 
 ## 互动交流
-* 邮箱：[smartloli.org@gmail.com]() 
+* 邮箱：[smartloli.org@gmail.com](mailto:smartloli.org@gmail.com) 
 * Twitter：[https://twitter.com/smartloli](https://twitter.com/smartloli) 
 * QQ群（Hadoop - 交流社区1）：[424769183](http://shang.qq.com/wpa/qunwpa?idkey=b07c12828ed6963fe79078c78bbd1aba7e61b8f5d8fc5ee4ed26809f40b35c37)
 * 微信群：敬请期待
